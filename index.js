@@ -1,6 +1,7 @@
 const express = require("express");
 const { connection } = require("./src/Configs/db");
 const cors = require("cors");
+const bookingRouter = require("./src/Controller/bookingController");
 require("dotenv").config();
 const app = express();
 app.use(express.json())
@@ -9,6 +10,8 @@ app.use(
         origin: true,
     })
 );
+
+app.use("/", bookingRouter)
 
 const port = process.env.REACT_APP_PORT || 3000;
 
