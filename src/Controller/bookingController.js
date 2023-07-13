@@ -14,7 +14,7 @@ bookingRouter.post("/book-seats", async (req, res) => {
             return res.status(200).send(`Booking done successfully`)
         }
     } catch (error) {
-        // console.log(error);
+        console.log(error);
         return res.status(500).send(`Error while booking seats ${error}`)
     }
 })
